@@ -1,8 +1,11 @@
+#library#
 import streamlit as st 
 from streamlit_option_menu import option_menu
 
+#option#
 navbar= option_menu(menu_title=None, options= ["Home","Periodik Unsur", 'Simbol Bahaya dan Bahan Kimia'], default_index=0, icons=['house-door','book','exclamation-diamond'])
 
+#home#
 if navbar== "Home":
     st.title ("PROJECT TUGAS AKHIR LPK KELOMPOK 1")
     st.write ('''
@@ -16,8 +19,10 @@ if navbar== "Home":
     Naufal Nabil (2219127)\n
     ''')
 
+#periodik unsur#
 if navbar=='Periodik Unsur':
     periode= st.selectbox('periode unsur',options=['pilih periode','periode 1','periode 2','periode 3','periode 4','periode 5','periode 6','periode 7'],index=0)
+    st.image('tabel periodik.jpeg')
     if periode=='periode 1':
         atom= st.text_input ('Masukkan Nomor Atom atau Nama Unsur')
         output= ''
@@ -1222,6 +1227,7 @@ if navbar=='Periodik Unsur':
                 st.error('nama dan nomor atom tidak terdapat di periode ini silahkan input yang lain!')
         st.write (output)
 
+#simbol bahaya dan bahan kimia#
 if navbar == 'Simbol Bahaya dan Bahan Kimia':
     jenisbahan= st.selectbox('pilih simbol bahaya', options=['pilih simbol','Eksplosive','Oksidasi','Korosif','Berbahaya Bagi Lingkungan','Irritant','Toxic'])
     if jenisbahan=='Eksplosive':
